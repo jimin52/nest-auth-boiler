@@ -30,7 +30,7 @@
 
 ```bash
 # pnpm npm 둘 다 됩니다
-$ pnpm add
+$ pnpm i
 $ npm i
 ```
 
