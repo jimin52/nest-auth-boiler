@@ -54,17 +54,28 @@ $ npm run start:prod
 
 ## Login Test
 
+### 정보 요청
 ```bash
-
-$ curl http://localhost:3000/profile 
-# 401 에러가 뜬다.
-
-$ curl -X POST http://localhost:3000/auth/login -d '{"username": "john", "password": "changeme"}' -H "Content-Type: application/json"
-# access-token 이 반환됨
-
-$ curl http://localhost:3000/profile -H "Authorization: Bearer [이전 명령어로 받아온 access-token 키]"
-# 로그인 된다 
+curl http://localhost:3000/profile 
 ```
+
+#### 결과
+`{"statusCode":401,"message":"Unauthorized"}`
+
+### 로그인
+```bash
+curl -X POST http://localhost:3000/auth/login -d '{"username": "john", "password": "changeme"}' -H "Content-Type: application/json"
+```
+
+#### 결과
+`{"access_token":"eyJhbGci..."}`
+
+### 정보요청
+```bash
+curl http://localhost:3000/profile -H "Authorization: Bearer [이전 명령어로 받아온 access-token 키]"
+```
+#### 결과
+`{"userId":1,"username":"john"}`
 
 
 
@@ -72,12 +83,6 @@ $ curl http://localhost:3000/profile -H "Authorization: Bearer [이전 명령어
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
