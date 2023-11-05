@@ -29,20 +29,27 @@
 ## Installation
 
 ```bash
-$ pnpm install
+# pnpm npm 둘 다 됩니다
+$ pnpm add
+$ npm i
 ```
 
 ## Running the app
 
 ```bash
+# pnpm npm 둘 다 됩니다
+
 # development
 $ pnpm run start
+$ npm run start
 
 # watch mode
 $ pnpm run start:dev
+$ npm run start:dev
 
 # production mode
 $ pnpm run start:prod
+$ npm run start:prod
 ```
 
 ## Login Test
