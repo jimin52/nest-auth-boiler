@@ -5,6 +5,7 @@ export type User = any;
 
 @Injectable()
 export class UserService {
+  // 예시로 사용자 정보 하드코딩
   private readonly users = [
     {
       userId: 1,
@@ -18,6 +19,7 @@ export class UserService {
     },
   ];
 
+  //  사용자 정보 찾기 메서드 orm 같이 구현
   async findOne(username: string): Promise<User | undefined> {
     return this.users.find((user) => user.username === username);
   }

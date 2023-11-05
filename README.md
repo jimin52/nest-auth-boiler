@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) 에서 passport 와 jwt 를 이용한 로그인 및 인증 boiler plate 레포지토리
 
 ## Installation
 
@@ -45,18 +45,22 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
-## Test
+## Login Test
 
 ```bash
-# unit tests
-$ pnpm run test
 
-# e2e tests
-$ pnpm run test:e2e
+$ curl http://localhost:3000/profile 
+# 401 에러가 뜬다.
 
-# test coverage
-$ pnpm run test:cov
+$ curl -X POST http://localhost:3000/auth/login -d '{"username": "john", "password": "changeme"}' -H "Content-Type: application/json"
+# access-token 이 반환됨
+
+$ curl http://localhost:3000/profile -H "Authorization: Bearer [이전 명령어로 받아온 access-token 키]"
+# 로그인 된다 
 ```
+
+
+
 
 ## Support
 
